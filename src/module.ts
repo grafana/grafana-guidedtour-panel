@@ -115,6 +115,12 @@ export const plugin = new PanelPlugin<GuidedTourOptions>(GuidedTourPanel).setPan
       defaultValue: 100,
       category: ['Tour Style'],
     })
+    .addTextInput({
+      path: 'width',
+      name: 'Width of the floater',
+      defaultValue: '300px',
+      category: ['Tour Style'],
+    })
     .addRadio({
       path: 'floaterPropsPlacement',
       name: 'Floater placement',

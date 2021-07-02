@@ -6,6 +6,7 @@ import { selectors } from '@grafana/e2e-selectors';
 import Joyride, { CallBackProps, STATUS, Step } from 'react-joyride';
 import MarkdownIt from 'markdown-it';
 import { GuidedTourOptions } from 'types';
+import { normalizeColor } from './utils';
 
 interface GuidedTourPanelProps extends PanelProps<GuidedTourOptions> {}
 
@@ -64,8 +65,8 @@ export const GuidedTourPanel = ({ options, data, width, height }: GuidedTourPane
       <div
         style={{
           padding: '20px',
-          color: options.panelTextColor,
-          backgroundColor: options.panelBackgroundColor || 'transparent',
+          color: normalizeColor(options.panelTextColor),
+          backgroundColor: normalizeColor(options.panelBackgroundColor) || 'transparent',
           backgroundImage: options.panelBackgroundImage ? `url("${options.panelBackgroundImage}")` : '',
         }}
       >
@@ -89,11 +90,12 @@ export const GuidedTourPanel = ({ options, data, width, height }: GuidedTourPane
         }}
         styles={{
           options: {
+            width: options.width || '',
             zIndex: 10000,
-            primaryColor: options.primaryColor || '#F05A28',
-            backgroundColor: options.backgroundColor || theme.colors.bg3,
-            arrowColor: options.arrowColor || theme.colors.bg3,
-            textColor: options.textColor || theme.colors.text,
+            primaryColor: normalizeColor(options.primaryColor) || '#F05A28',
+            backgroundColor: normalizeColor(options.backgroundColor) || theme.colors.bg3,
+            arrowColor: normalizeColor(options.arrowColor) || theme.colors.bg3,
+            textColor: normalizeColor(options.textColor) || theme.colors.text,
           },
         }}
       />

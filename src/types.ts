@@ -19,6 +19,7 @@ export interface GuidedTourOptions {
   redirectURLTitle: string;
 
   contentAlign: 'left' | 'center' | 'right';
+  width: string;
   primaryColor: string;
   backgroundColor: string;
   backgroundImage: string;

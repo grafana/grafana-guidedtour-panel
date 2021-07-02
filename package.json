@@ -1,6 +1,6 @@
 {
   "name": "grafana-guidedtour-panel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Guided tour for Grafana dashboards",
   "scripts": {
     "build": "grafana-toolkit plugin:build",

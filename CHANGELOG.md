@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.4 (2021-07-02)
+
+- Feature: Support for customizing floater width
+- Bug fix: Fix missing colors
+
 ## 0.0.3 (2021-07-02)
 
 - Feature: Support for re-ordering steps

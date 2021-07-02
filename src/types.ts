@@ -10,13 +10,23 @@ export interface GuidedTourOptions {
 
   startButtonText: string;
   stopButtonText: string;
-  contentAlign: 'left' | 'center' | 'right';
+  panelTextColor: string;
+  panelBackgroundColor: string;
+  panelBackgroundImage: string;
+  panelContent: string;
 
   redirectURL: string;
   redirectURLTitle: string;
 
+  contentAlign: 'left' | 'center' | 'right';
   primaryColor: string;
   backgroundColor: string;
   arrowColor: string;
   textColor: string;
+  scrollOffset: number;
+  showProgress: boolean;
+  showSkipButton: boolean;
+  hideBackButton: boolean;
+
+  floaterPropsPlacement: 'top' | 'bottom' | 'left' | 'right';
 }

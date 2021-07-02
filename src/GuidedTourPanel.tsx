@@ -34,15 +34,18 @@ export const GuidedTourPanel = ({ options, data, width, height }: GuidedTourPane
       ),
     };
   });
-  console.log(steps);
   const cb = (data: CallBackProps) => {
-    const { status } = data;
     const finishedStatuses: string[] = [STATUS.FINISHED, STATUS.SKIPPED];
-    if (finishedStatuses.includes(status)) {
+    if ((data.action === 'close' && data.lifecycle === 'complete') || finishedStatuses.includes(data.status)) {
       setRun(false);
-      if (status === STATUS.FINISHED && options.redirectURL) {
-        window.location.href = options.redirectURL;
-      }
+    }
+    if (
+      options.redirectURL &&
+      data.index === steps.length - 1 &&
+      data.action === 'next' &&
+      data.lifecycle === 'complete'
+    ) {
+      window.location.href = options.redirectURL;
     }
   };
   return (
@@ -55,18 +58,29 @@ export const GuidedTourPanel = ({ options, data, width, height }: GuidedTourPane
         `
       )}
     >
-      <>
+      <div
+        style={{
+          padding: '20px',
+          color: options.panelTextColor,
+          backgroundColor: options.panelBackgroundColor || 'transparent',
+          backgroundImage: options.panelBackgroundImage ? `url("${options.panelBackgroundImage}")` : '',
+        }}
+      >
+        {options.panelContent && <div dangerouslySetInnerHTML={{ __html: markdownToHTML(options.panelContent) }}></div>}
         {!run && <Button onClick={e => setRun(true)}>{options.startButtonText || 'Run tour'}</Button>}
         {run && <Button onClick={e => setRun(false)}>{options.stopButtonText || 'Stop tour'}</Button>}
-      </>
+      </div>
       <Joyride
         callback={cb}
         steps={steps}
         run={run}
         continuous={true}
         scrollToFirstStep={true}
-        showProgress={false}
-        showSkipButton={true}
+        scrollOffset={options.scrollOffset || 100}
+        showProgress={options.showProgress}
+        showSkipButton={options.showSkipButton}
+        hideBackButton={options.hideBackButton}
+        floaterProps={{ placement: options.floaterPropsPlacement || 'top' }}
         locale={{
           last: options.redirectURL && options.redirectURL.length > 0 ? options.redirectURLTitle || 'Next' : 'Finish',
         }}

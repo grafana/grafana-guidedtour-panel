@@ -1,6 +1,6 @@
 {
   "name": "grafana-guidedtour-panel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Guided tour for Grafana dashboards",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
@@ -10,7 +10,7 @@
     "sign": "grafana-toolkit plugin:sign",
     "start": "yarn watch"
   },
-  "author": "Sriram",
+  "author": "Sriramajeyam Sugumaran",
   "license": "Apache-2.0",
   "dependencies": {
     "@grafana/data": "7.2.0",

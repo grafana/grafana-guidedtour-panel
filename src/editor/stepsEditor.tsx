@@ -29,6 +29,13 @@ export const StepEditor: React.FC<StepEditorProps> = ({ value: steps, onChange }
     set(newSteps, key, value);
     onChange(newSteps);
   };
+  const onMoveStep = (index: number, direction: 'up' | 'down') => {
+    const newSteps: Step[] = cloneDeep(steps || []);
+    var tmp = newSteps[index];
+    newSteps[index] = newSteps[direction === 'up' ? index - 1 : index + 1];
+    newSteps[direction === 'up' ? index - 1 : index + 1] = tmp;
+    onChange(newSteps);
+  };
   return (
     <>
       {steps.map((step, index) => (
@@ -77,13 +84,35 @@ export const StepEditor: React.FC<StepEditorProps> = ({ value: steps, onChange }
           <div className="gf-form">
             <Button
               icon="trash-alt"
-              variant="secondary"
+              variant="destructive"
               size="sm"
               style={{ margin: '5px' }}
               onClick={() => onStepRemove(index)}
             >
-              Remove step
+              Remove step {index + 1}
             </Button>
+            {index !== 0 && (
+              <Button
+                icon="arrow-up"
+                size="sm"
+                variant="secondary"
+                style={{ margin: '5px' }}
+                onClick={() => onMoveStep(index, 'up')}
+              >
+                Move Up
+              </Button>
+            )}
+            {index !== steps.length - 1 && (
+              <Button
+                icon="arrow-down"
+                size="sm"
+                variant="secondary"
+                style={{ margin: '5px' }}
+                onClick={() => onMoveStep(index, 'down')}
+              >
+                Move Down
+              </Button>
+            )}
           </div>
           <br />
         </>

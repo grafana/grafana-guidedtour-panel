@@ -62,6 +62,12 @@ export const plugin = new PanelPlugin<GuidedTourOptions>(GuidedTourPanel).setPan
       name: 'Background Color',
       category: ['Tour Style'],
     })
+    .addTextInput({
+      path: 'backgroundImage',
+      name: 'Background Image of the tour',
+      description: 'Optional. Experimental',
+      category: ['Tour Style'],
+    })
     .addColorPicker({
       path: 'arrowColor',
       name: 'Arrow Color',

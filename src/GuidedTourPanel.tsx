@@ -28,7 +28,10 @@ export const GuidedTourPanel = ({ options, data, width, height }: GuidedTourPane
           : step.target,
       content: (
         <div
-          style={{ textAlign: options.contentAlign || 'left' }}
+          style={{
+            textAlign: options.contentAlign || 'left',
+            backgroundImage: options.backgroundImage ? `url("${options.backgroundImage}")` : '',
+          }}
           dangerouslySetInnerHTML={{ __html: markdownToHTML(step.content) }}
         ></div>
       ),

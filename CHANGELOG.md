@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.3 (2021-07-02)
+
+- Feature: Support for re-ordering steps
+- Experimental: Background image support for tour popups
+
 ## 0.0.2 (2021-07-02)
 
 - Feature: Support for customizing controller UI and content

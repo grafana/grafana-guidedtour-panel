@@ -21,6 +21,7 @@ export interface GuidedTourOptions {
   contentAlign: 'left' | 'center' | 'right';
   primaryColor: string;
   backgroundColor: string;
+  backgroundImage: string;
   arrowColor: string;
   textColor: string;
   scrollOffset: number;

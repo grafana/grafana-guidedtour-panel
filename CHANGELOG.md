@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0 (2021-07-12)
+
+- Signed version of the plugin released
+
 ## 0.0.4 (2021-07-02)
 
 - Feature: Support for customizing floater width

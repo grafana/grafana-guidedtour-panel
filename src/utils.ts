@@ -1,4 +1,6 @@
-export const colors: Record<string, string> = {};
+import { renderMarkdown } from '@grafana/data';
+
+const colors: Record<string, string> = {};
 [
   {
     name: 'red',
@@ -61,12 +63,21 @@ export const colors: Record<string, string> = {};
     ],
   },
 ]
-  .map(cg => cg.shades)
-  .forEach(s => {
-    s.forEach(c => {
+  .map((cg) => cg.shades)
+  .forEach((s) => {
+    s.forEach((c) => {
       colors[c.name] = c.color;
     });
   });
-export const normalizeColor = (color: string): string => {
-  return colors[color] || color;
+
+export const normalizeColor = (color?: string): string => {
+  return color ? colors[color] || color : '';
+};
+
+export const markdownToHTML = (
+  markdownText: string
+): {
+  __html: string;
+} => {
+  return { __html: renderMarkdown(markdownText) };
 };

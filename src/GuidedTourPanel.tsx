@@ -1,123 +1,57 @@
 import React, { useState } from 'react';
-import { css, cx } from 'emotion';
-import { PanelProps, textUtil } from '@grafana/data';
-import { Button, stylesFactory, useTheme } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
-import Joyride, { CallBackProps, STATUS, Step } from 'react-joyride';
-import MarkdownIt from 'markdown-it';
-import { GuidedTourOptions } from 'types';
-import { normalizeColor } from './utils';
+import { PanelProps } from '@grafana/data';
+import { Button, useTheme2 } from '@grafana/ui';
+import Joyride, { CallBackProps, Step, STATUS, LIFECYCLE, ACTIONS } from 'react-joyride';
+import { getStepSelector } from './core';
+import { markdownToHTML } from './utils';
+import { getStyles } from './styles';
+import { GuidedTourOptions } from './types';
 
-interface GuidedTourPanelProps extends PanelProps<GuidedTourOptions> {}
-
-const markdownToHTML = (mdText: string) => {
-  const md = new MarkdownIt({ html: true });
-  const html = md.render(mdText);
-  const sanitizedHtml = textUtil.sanitize(html);
-  return sanitizedHtml;
-};
-
-export const GuidedTourPanel = ({ options, data, width, height }: GuidedTourPanelProps) => {
-  const theme = useTheme();
-  const styles = getStyles();
+export const GuidedTourPanel = (props: PanelProps<GuidedTourOptions>) => {
+  const { options } = props;
+  const theme = useTheme2();
+  const styles = getStyles(props, theme);
   const [run, setRun] = useState(options.autoStart);
-  const steps: Step[] = (options.steps || []).map(step => {
+  const steps: Step[] = (options.steps || []).map((step) => {
     return {
-      target:
-        step.selectBy === 'panelTitle'
-          ? `div[aria-label='${selectors.components.Panels.Panel.containerByTitle(step.panelTitle)}']`
-          : step.target,
-      content: (
-        <div
-          style={{
-            textAlign: options.contentAlign || 'left',
-            backgroundImage: options.backgroundImage ? `url("${options.backgroundImage}")` : '',
-          }}
-          dangerouslySetInnerHTML={{ __html: markdownToHTML(step.content) }}
-        ></div>
-      ),
+      target: getStepSelector(step),
+      content: <div className={styles.Steps.Step.Container} dangerouslySetInnerHTML={markdownToHTML(step.content)}></div>,
     };
   });
-  const cb = (data: CallBackProps) => {
+  const lastButtonText = options.redirectURL && options.redirectURL.length > 0 ? options.redirectURLTitle || 'Next' : 'Finish';
+  // This callback method determines what needs to be done after each step
+  const joyRideCallback = (data: CallBackProps) => {
     const finishedStatuses: string[] = [STATUS.FINISHED, STATUS.SKIPPED];
-    if ((data.action === 'close' && data.lifecycle === 'complete') || finishedStatuses.includes(data.status)) {
+    if ((data.action === ACTIONS.CLOSE && data.lifecycle === LIFECYCLE.COMPLETE) || finishedStatuses.includes(data.status)) {
       setRun(false);
     }
-    if (
-      options.redirectURL &&
-      data.index === steps.length - 1 &&
-      data.action === 'next' &&
-      data.lifecycle === 'complete'
-    ) {
+    if (data.action === ACTIONS.NEXT && data.lifecycle === LIFECYCLE.COMPLETE && options.redirectURL && data.index === steps.length - 1) {
       window.location.href = options.redirectURL;
     }
   };
   return (
-    <div
-      className={cx(
-        styles.wrapper,
-        css`
-          width: ${width}px;
-          height: ${height}px;
-        `
-      )}
-    >
-      <div
-        style={{
-          padding: '20px',
-          color: normalizeColor(options.panelTextColor),
-          backgroundColor: normalizeColor(options.panelBackgroundColor) || 'transparent',
-          backgroundImage: options.panelBackgroundImage ? `url("${options.panelBackgroundImage}")` : '',
-        }}
-      >
-        {options.panelContent && <div dangerouslySetInnerHTML={{ __html: markdownToHTML(options.panelContent) }}></div>}
-        {!run && <Button onClick={e => setRun(true)}>{options.startButtonText || 'Run tour'}</Button>}
-        {run && <Button onClick={e => setRun(false)}>{options.stopButtonText || 'Stop tour'}</Button>}
+    <div className={styles.Panel.Wrapper}>
+      <div className={styles.Panel.Content}>
+        {options.panelContent && <div dangerouslySetInnerHTML={markdownToHTML(options.panelContent)}></div>}
+        {!run && <Button onClick={() => setRun(true)}>{options.startButtonText || 'Run tour'}</Button>}
+        {run && <Button onClick={() => setRun(false)}>{options.stopButtonText || 'Stop tour'}</Button>}
       </div>
-      <Joyride
-        callback={cb}
-        steps={steps}
-        run={run}
-        continuous={true}
-        scrollToFirstStep={true}
-        scrollOffset={options.scrollOffset || 100}
-        showProgress={options.showProgress}
-        showSkipButton={options.showSkipButton}
-        hideBackButton={options.hideBackButton}
-        floaterProps={{ placement: options.floaterPropsPlacement || 'top' }}
-        locale={{
-          last: options.redirectURL && options.redirectURL.length > 0 ? options.redirectURLTitle || 'Next' : 'Finish',
-        }}
-        styles={{
-          options: {
-            width: options.width || '',
-            zIndex: 10000,
-            primaryColor: normalizeColor(options.primaryColor) || '#F05A28',
-            backgroundColor: normalizeColor(options.backgroundColor) || theme.colors.bg3,
-            arrowColor: normalizeColor(options.arrowColor) || theme.colors.bg3,
-            textColor: normalizeColor(options.textColor) || theme.colors.text,
-          },
-        }}
-      />
+      <div className="guidedtour-step">
+        <Joyride
+          callback={joyRideCallback}
+          steps={steps}
+          run={run}
+          continuous={true}
+          scrollToFirstStep={true}
+          scrollOffset={options.scrollOffset || 100}
+          showProgress={options.showProgress}
+          showSkipButton={options.showSkipButton}
+          hideBackButton={options.hideBackButton}
+          floaterProps={{ placement: options.floaterPropsPlacement || 'top' }}
+          locale={{ last: lastButtonText }}
+          styles={styles.JoyRideOptions}
+        />
+      </div>
     </div>
   );
 };
-
-const getStyles = stylesFactory(() => {
-  return {
-    wrapper: css`
-      position: relative;
-    `,
-    svg: css`
-      position: absolute;
-      top: 0;
-      left: 0;
-    `,
-    textBox: css`
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      padding: 10px;
-    `,
-  };
-});

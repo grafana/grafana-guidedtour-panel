@@ -1,14 +1,22 @@
 import { PanelPlugin } from '@grafana/data';
 import { GuidedTourPanel } from './GuidedTourPanel';
-import { StepEditorOption } from './editor/stepsEditor';
+import { StepEditor } from './editor/stepsEditor';
 import { PanelContentEditor } from './editor/panelContentEditor';
-import { GuidedTourOptions } from './types';
+import { GuidedTourOptions, ContentAlignOptions, FloaterPlacementOptions } from './types';
 
-export const plugin = new PanelPlugin<GuidedTourOptions>(GuidedTourPanel).setPanelOptions(builder => {
+export const plugin = new PanelPlugin<GuidedTourOptions>(GuidedTourPanel).setPanelOptions((builder) => {
   return builder
+    .addCustomEditor({
+      id: 'steps',
+      name: '',
+      path: 'steps',
+      category: ['Tour Steps'],
+      defaultValue: [],
+      editor: StepEditor,
+    })
     .addBooleanSwitch({
       path: 'autoStart',
-      name: 'Auto start',
+      name: 'Auto start tour',
       defaultValue: false,
       category: ['Tour Settings'],
     })
@@ -45,12 +53,11 @@ export const plugin = new PanelPlugin<GuidedTourOptions>(GuidedTourPanel).setPan
     .addCustomEditor({
       id: 'panelContent',
       path: 'panelContent',
-      name: 'Controller content',
+      name: 'Control Panel content',
       description: 'Optional',
       category: ['Tour Settings'],
       editor: PanelContentEditor,
     })
-    .addCustomEditor(StepEditorOption)
     .addColorPicker({
       path: 'primaryColor',
       name: 'Primary Color',
@@ -83,13 +90,7 @@ export const plugin = new PanelPlugin<GuidedTourOptions>(GuidedTourPanel).setPan
       name: 'Content Align',
       defaultValue: 'center',
       category: ['Tour Style'],
-      settings: {
-        options: [
-          { value: 'left', label: 'Left' },
-          { value: 'center', label: 'Center' },
-          { value: 'right', label: 'Right' },
-        ],
-      },
+      settings: { options: ContentAlignOptions },
     })
     .addBooleanSwitch({
       path: 'showProgress',
@@ -126,27 +127,20 @@ export const plugin = new PanelPlugin<GuidedTourOptions>(GuidedTourPanel).setPan
       name: 'Floater placement',
       defaultValue: 'bottom',
       category: ['Tour Style'],
-      settings: {
-        options: [
-          { label: 'Top', value: 'top' },
-          { label: 'Bottom', value: 'bottom' },
-          { label: 'Left', value: 'left' },
-          { label: 'Right', value: 'Right' },
-        ],
-      },
+      settings: { options: FloaterPlacementOptions },
     })
     .addTextInput({
       path: 'redirectURL',
       name: 'Next URL',
-      category: ['Last Page'],
+      category: ['Tour Settings'],
       description: '(optional) URL of the page needs to redirected after last step',
     })
     .addTextInput({
       path: 'redirectURLTitle',
       name: 'Next URL Title',
-      category: ['Last Page'],
+      category: ['Tour Settings'],
       description: '(optional) Title to be shown in the last step',
-      showIf: options => {
+      showIf: (options) => {
         return options.redirectURL && options.redirectURL.length > 0 ? true : false;
       },
     });

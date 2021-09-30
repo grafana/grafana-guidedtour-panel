@@ -1,28 +1,27 @@
 {
   "name": "grafana-guidedtour-panel",
-  "version": "0.1.0",
+  "version": "0.2.0-alpha.1",
   "description": "Guided tour for Grafana dashboards",
   "scripts": {
-    "build": "grafana-toolkit plugin:build",
-    "test": "grafana-toolkit plugin:test",
     "dev": "grafana-toolkit plugin:dev",
     "watch": "grafana-toolkit plugin:dev --watch",
-    "sign": "grafana-toolkit plugin:sign",
-    "start": "yarn watch"
+    "test": "grafana-toolkit plugin:test",
+    "build": "grafana-toolkit plugin:build",
+    "sign": "grafana-toolkit plugin:sign"
   },
-  "author": "Sriramajeyam Sugumaran",
+  "author": "Grafana Labs",
   "license": "Apache-2.0",
   "dependencies": {
-    "@grafana/data": "7.2.0",
-    "@grafana/e2e-selectors": "7.2.0",
-    "@grafana/ui": "7.2.0",
+    "@grafana/data": "8.1.0",
+    "@grafana/runtime": "8.1.0",
+    "@grafana/ui": "8.1.0",
     "emotion": "10.0.27",
     "lodash": "^4.17.21",
-    "markdown-it": "^12.0.6",
-    "react-joyride": "^2.3.0"
+    "react-joyride": "^2.3.0",
+    "semver": "^7.3.5"
   },
   "devDependencies": {
-    "@grafana/toolkit": "7.3.0",
+    "@grafana/toolkit": "8.1.0",
     "@types/lodash": "^4.14.170",
     "@types/markdown-it": "^12.0.2",
     "tslib": "^2.3.0"

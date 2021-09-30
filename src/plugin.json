@@ -1,14 +1,14 @@
 {
-  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/v8.1.0/docs/sources/developers/plugins/plugin.schema.json",
   "type": "panel",
   "name": "Guided Tour",
-  "id": "yesoreyeram-guidedtour-panel",
+  "id": "grafana-guidedtour-panel",
   "skipDataQuery": true,
   "info": {
     "description": "Guided tour for Grafana dashboards",
     "author": {
-      "name": "Sriram",
-      "url": "https://yesoreyeram.github.io"
+      "name": "Grafana Labs",
+      "url": "https://grafana.com"
     },
     "keywords": ["Guided tour"],
     "logos": {
@@ -18,11 +18,11 @@
     "links": [
       {
         "name": "Website",
-        "url": "https://github.com/yesoreyeram/grafana-guidedtour-panel"
+        "url": "https://github.com/grafana/grafana-guidedtour-panel"
       },
       {
         "name": "License",
-        "url": "https://github.com/yesoreyeram/grafana-guidedtour-panel/blob/main/LICENSE"
+        "url": "https://github.com/grafana/grafana-guidedtour-panel/blob/main/LICENSE"
       }
     ],
     "screenshots": [],
@@ -30,7 +30,7 @@
     "updated": "%TODAY%"
   },
   "dependencies": {
-    "grafanaDependency": ">=7.3.0",
+    "grafanaDependency": ">=8.1.0",
     "plugins": []
   }
 }

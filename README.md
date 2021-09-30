@@ -1,6 +1,4 @@
-# Guided Tour panel for Grafana
-
-![Guided Tour Panel Cover Image](https://user-images.githubusercontent.com/153843/124014480-7b062e80-d9db-11eb-8080-dd884f0ff5e8.png)
+# Guided tour panel for grafana dashboards
 
 Add guided tour to your Grafana dashboards
 
@@ -17,7 +15,7 @@ Add guided tour to your Grafana dashboards
 
 - Add Guided Tour Panel to your dashboard
 
-![image](https://user-images.githubusercontent.com/153843/124014716-c6204180-d9db-11eb-8d4e-3518a8cba64e.png)
+  ![image](https://user-images.githubusercontent.com/153843/124014716-c6204180-d9db-11eb-8d4e-3518a8cba64e.png)
 
 - Add as many steps required. Provide exact panel title for the step and then specify content. Content can be in markdown format.
   ![image](https://user-images.githubusercontent.com/153843/124014846-ef40d200-d9db-11eb-9d0c-b713676b0fd9.png)

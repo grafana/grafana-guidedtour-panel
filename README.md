@@ -25,5 +25,5 @@ Add guided tour to your Grafana dashboards.
 ## Known limitations
 
 - Panels you are navigating should be in viewport
-- Panels collapsed inside dashboard rows can't be targeted.
+- Panels collapsed inside dashboard rows can't be targeted
 - Guided tour panel controller needs to be at the top of the dashboard or at least it should be in viewport

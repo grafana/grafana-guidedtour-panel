@@ -10,7 +10,7 @@ Add guided tour to your Grafana dashboards.
 
 - Add guided steps targeting dashboard panels
 - Customize the tour controller with custom markdown
-- Customize tour theme ( color scheme)
+- Customize tour color theme and style
 - Support for grafana dark and light mode
 - Does support markdown content
 - Option to auto start the tour on dashboard load

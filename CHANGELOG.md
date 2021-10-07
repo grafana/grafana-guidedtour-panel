@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 (2021-10-07)
+
+- BREAKING: Plugin ID renamed from `yesoreyeram-guidedtour-panel` to `grafana-guidedtour-panel`
+- BREAKING: Grafana dependency updated to `>=8.1.0`
+
 ## 0.1.0 (2021-07-12)
 
 - Signed version of the plugin released

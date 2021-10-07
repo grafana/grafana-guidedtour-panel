@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { PanelProps } from '@grafana/data';
-import { Button, useTheme2 } from '@grafana/ui';
+import { useTheme2 } from '@grafana/ui';
 import Joyride, { CallBackProps, Step, STATUS, LIFECYCLE, ACTIONS } from 'react-joyride';
+import { TourController } from './components/TourController';
+import { StepContainer } from './components/StepContainer';
 import { getStepSelector } from './core';
-import { markdownToHTML } from './utils';
-import { getStyles } from './styles';
+import { getJoyRideStyles } from './styles';
 import { GuidedTourOptions } from './types';
 
 export const GuidedTourPanel = (props: PanelProps<GuidedTourOptions>) => {
   const { options } = props;
   const theme = useTheme2();
-  const styles = getStyles(props, theme);
+  const joyRideStyles = getJoyRideStyles(props, theme);
   const [run, setRun] = useState(options.autoStart);
   const steps: Step[] = (options.steps || []).map((step) => {
     return {
       target: getStepSelector(step),
-      content: <div className={styles.Steps.Step.Container} dangerouslySetInnerHTML={markdownToHTML(step.content)}></div>,
+      content: <StepContainer content={step.content} contentAlign={options.contentAlign} backgroundImage={options.backgroundImage} />,
     };
   });
   const lastButtonText = options.redirectURL && options.redirectURL.length > 0 ? options.redirectURLTitle || 'Next' : 'Finish';
@@ -30,12 +31,17 @@ export const GuidedTourPanel = (props: PanelProps<GuidedTourOptions>) => {
     }
   };
   return (
-    <div className={styles.Panel.Wrapper}>
-      <div className={styles.Panel.Content}>
-        {options.panelContent && <div dangerouslySetInnerHTML={markdownToHTML(options.panelContent)}></div>}
-        {!run && <Button onClick={() => setRun(true)}>{options.startButtonText || 'Run tour'}</Button>}
-        {run && <Button onClick={() => setRun(false)}>{options.stopButtonText || 'Stop tour'}</Button>}
-      </div>
+    <div style={{ position: 'relative', width: `${props.width}px`, height: `${props.height}px` }}>
+      <TourController
+        run={run}
+        setRun={setRun}
+        panelContent={options.panelContent}
+        panelTextColor={options.panelTextColor}
+        panelBackgroundColor={options.panelBackgroundColor}
+        panelBackgroundImage={options.panelBackgroundImage}
+        startButtonText={options.startButtonText}
+        stopButtonText={options.stopButtonText}
+      />
       <div className="guidedtour-step">
         <Joyride
           callback={joyRideCallback}
@@ -49,7 +55,7 @@ export const GuidedTourPanel = (props: PanelProps<GuidedTourOptions>) => {
           hideBackButton={options.hideBackButton}
           floaterProps={{ placement: options.floaterPropsPlacement || 'top' }}
           locale={{ last: lastButtonText }}
-          styles={styles.JoyRideOptions}
+          styles={joyRideStyles}
         />
       </div>
     </div>

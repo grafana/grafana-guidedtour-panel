@@ -1,5 +1,3 @@
-import { renderMarkdown } from '@grafana/data';
-
 const colors: Record<string, string> = {};
 [
   {
@@ -72,12 +70,4 @@ const colors: Record<string, string> = {};
 
 export const normalizeColor = (color?: string): string => {
   return color ? colors[color] || color : '';
-};
-
-export const markdownToHTML = (
-  markdownText: string
-): {
-  __html: string;
-} => {
-  return { __html: renderMarkdown(markdownText) };
 };

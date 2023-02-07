@@ -1,6 +1,7 @@
 {
   "ignorePaths": [
     "node_modules/",
+    "provisioning",
     "dist/"
   ],
   "words": [
@@ -8,6 +9,7 @@
     "endregion",
     "grafana",
     "guidedtour",
+    "typecheck",
     "yesoreyeram"
   ]
 }

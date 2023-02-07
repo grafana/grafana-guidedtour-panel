@@ -2,6 +2,7 @@
 
 ## 0.3.0 (2023-02-07)
 
+- **Chore**: Migrated build process from `@grafana/toolkit` to `@grafana/create-plugin`
 - **Chore**: Spellcheck added to the code
 
 ## 0.2.0 (2021-10-07)

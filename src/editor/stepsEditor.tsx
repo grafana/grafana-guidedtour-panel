@@ -23,7 +23,7 @@ export const StepEditor = (props: StandardEditorProps<Step[]>) => {
   };
   const onMoveStep = (index: number, direction: 'up' | 'down') => {
     const newSteps: Step[] = [...steps];
-    var tmp = newSteps[index];
+    let tmp = newSteps[index];
     newSteps[index] = newSteps[direction === 'up' ? index - 1 : index + 1];
     newSteps[direction === 'up' ? index - 1 : index + 1] = tmp;
     onChange(newSteps);
@@ -44,18 +44,18 @@ export const StepEditor = (props: StandardEditorProps<Step[]>) => {
           {step.selectBy === 'panelTitle' && (
             <div className="gf-form">
               <InlineFormLabel>Target Panel Title</InlineFormLabel>
-              <Input css={{}} value={step.panelTitle} onChange={(e) => onValueChange(`${index}.panelTitle`, e.currentTarget.value)} />
+              <Input value={step.panelTitle} onChange={(e) => onValueChange(`${index}.panelTitle`, e.currentTarget.value)} />
             </div>
           )}
           {step.selectBy === 'customTarget' && (
             <div className="gf-form">
               <InlineFormLabel>CSS Selector</InlineFormLabel>
-              <Input css={{}} value={step.target} onChange={(e) => onValueChange(`${index}.target`, e.currentTarget.value)} />
+              <Input value={step.target} onChange={(e) => onValueChange(`${index}.target`, e.currentTarget.value)} />
             </div>
           )}
           <div className="gf-form">
             <InlineFormLabel>Guided Tour Content</InlineFormLabel>
-            <TextArea css={{}} value={step.content} rows={3} onChange={(e) => onValueChange(`${index}.content`, e.currentTarget.value)} />
+            <TextArea value={step.content} rows={3} onChange={(e) => onValueChange(`${index}.content`, e.currentTarget.value)} />
           </div>
           <div className="gf-form">
             <Button icon="trash-alt" variant="destructive" size="sm" style={{ margin: '5px' }} onClick={() => onStepRemove(index)}>

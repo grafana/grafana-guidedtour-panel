@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "Guided tour for Grafana dashboards",
   "scripts": {
+    "spellcheck": "cspell -c cspell.config.json \"**/*.{ts,tsx,js,go,md,mdx,yml,yaml,json,scss,css}\"",
     "dev": "grafana-toolkit plugin:dev",
     "watch": "grafana-toolkit plugin:dev --watch",
     "test": "grafana-toolkit plugin:test",
@@ -26,6 +27,7 @@
     "@grafana/toolkit": "8.1.0",
     "@types/lodash": "^4.14.170",
     "@types/markdown-it": "^12.0.2",
+    "cspell": "^6.22.0",
     "csstype": "^3.0.9",
     "tslib": "^2.3.0"
   },

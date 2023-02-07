@@ -1,0 +1,13 @@
+{
+  "ignorePaths": [
+    "node_modules/",
+    "dist/"
+  ],
+  "words": [
+    "csstype",
+    "endregion",
+    "grafana",
+    "guidedtour",
+    "yesoreyeram"
+  ]
+}

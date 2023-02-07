@@ -20,6 +20,12 @@ export const plugin = new PanelPlugin<GuidedTourOptions>(GuidedTourPanel).setPan
       defaultValue: false,
       category: ['Tour Settings'],
     })
+    .addBooleanSwitch({
+      path: 'disableBeacon',
+      name: 'Disable initial beacon',
+      defaultValue: false,
+      category: ['Tour Settings'],
+    })
     .addTextInput({
       path: 'startButtonText',
       name: 'Start button text',

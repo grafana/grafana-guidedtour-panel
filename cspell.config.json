@@ -1,0 +1,15 @@
+{
+  "ignorePaths": [
+    "node_modules/",
+    "provisioning",
+    "dist/"
+  ],
+  "words": [
+    "csstype",
+    "endregion",
+    "grafana",
+    "guidedtour",
+    "typecheck",
+    "yesoreyeram"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/grafana/grafana/v8.1.0/docs/sources/developers/plugins/plugin.schema.json",
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
   "type": "panel",
   "name": "Guided Tour",
   "id": "grafana-guidedtour-panel",
@@ -30,7 +30,8 @@
     "updated": "%TODAY%"
   },
   "dependencies": {
-    "grafanaDependency": ">=8.1.0",
+    "grafanaVersion": "8.4.7",
+    "grafanaDependency": ">=8.4.7",
     "plugins": []
   }
 }

@@ -12,7 +12,7 @@ export type Step = StepPanelTitle | StepCustomTarget;
 export type FLOATER_PLACEMENT = 'top' | 'bottom' | 'left' | 'right';
 export type CONTENT_ALIGNMENT = 'left' | 'center' | 'right';
 export type GuidedTourOptions = {
-  // Behaviour props
+  // Behavior props
   autoStart?: boolean;
   steps?: Step[];
   // Tour Controller props

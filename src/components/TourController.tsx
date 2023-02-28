@@ -20,6 +20,8 @@ export const TourController = (props: {
   const buttonStyle = {
     height: '100%',
     width: '100%',
+    minHeight: '2em',
+    minWidth: '2em',
     overflow: 'auto',
     justifyContent: 'center',
   } as const;

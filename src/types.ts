@@ -19,8 +19,6 @@ export type GuidedTourOptions = {
   // Tour Controller props
   startButtonText?: string;
   stopButtonText?: string;
-  buttonPaddingX?: string;
-  buttonPaddingY?: string;
   panelTextColor?: string;
   panelBackgroundColor?: string;
   panelBackgroundImage?: string;

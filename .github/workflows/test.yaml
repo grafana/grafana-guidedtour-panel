@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '30 8,18 * * *'
+    - cron: '30 8 * * *'
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
@@ -58,17 +58,7 @@ jobs:
       - name: move cypress folders;
         run: |
           # This step is require for now to skip e2e in drone
-          ls -lha;
-          pwd
-          echo "moving files";
           mv e2e/ cypress/;
-          echo "done moving files";
-          mkdir -p e2e;
-          mkdir -p cypress;
-          ls -lha .;
-          ls -lha ./dist;
-          ls -lha ./cypress;
-          pwd
       - name: Start the docker container for e2e
         run: |
           docker-compose pull

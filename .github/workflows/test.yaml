@@ -1,0 +1,87 @@
+name: Test
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '30 8 * * *'
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+jobs:
+  test-and-build:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: NodeJS setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.16.0
+      - name: Install frontend dependencies
+        run: |
+          yarn install --frozen-lockfile;
+      - name: Test frontend
+        run: |
+          yarn test:ci
+      - name: Build frontend
+        run: |
+          yarn build
+      - name: Plugin artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: plugins-artifacts
+          path: dist/*
+  e2e:
+    runs-on: ubuntu-20.04
+    needs: test-and-build
+    strategy:
+      fail-fast: false
+      matrix:
+        grVersion: ['8.4.7', 'latest', 'main']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: NodeJS setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.16.0
+      - name: Install frontend dependencies
+        run: |
+          yarn install --frozen-lockfile;
+      - name: Download artifacts from previous job
+        uses: actions/download-artifact@v3
+        with:
+          name: plugins-artifacts
+          path: dist
+      - name: move cypress folders;
+        run: |
+          # This step is require for now to skip e2e in drone
+          mv e2e/ cypress/;
+      - name: Start the docker container for e2e
+        run: |
+          docker-compose pull
+          docker-compose up -d
+        env:
+          GR_VERSION: ${{ matrix.grVersion }}
+      - name: wait for grafana to start
+        uses: nev7n/wait_for_response@v1
+        with:
+          url: 'http://localhost:3000/'
+          responseCode: 200
+          timeout: 20000
+          interval: 500
+      - name: Run E2E
+        run: yarn e2e
+      - name: Stop the docker container
+        if: always()
+        run: docker-compose down
+      - name: Store E2E artifacts
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: e2e-artifacts-${{ matrix.grVersion }}
+          path: |
+            cypress/videos
+            cypress/screenshots

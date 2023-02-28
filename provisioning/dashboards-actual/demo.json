@@ -71,42 +71,42 @@
         "startButtonText": "Start tour",
         "steps": [
           {
-            "content": "my awesome guided tour",
+            "content": "my awesome guided tour step 1",
             "panelTitle": "one",
             "selectBy": "panelTitle"
           },
           {
-            "content": "my awesome guided tour",
+            "content": "my awesome guided tour step 2",
             "panelTitle": "two",
             "selectBy": "panelTitle"
           },
           {
-            "content": "my awesome guided tour",
+            "content": "my awesome guided tour step 3",
             "panelTitle": "three",
             "selectBy": "panelTitle"
           },
           {
-            "content": "my awesome guided tour",
+            "content": "my awesome guided tour step 4",
             "panelTitle": "four",
             "selectBy": "panelTitle"
           },
           {
-            "content": "my awesome guided tour",
+            "content": "my awesome guided tour step 5",
             "panelTitle": "five",
             "selectBy": "panelTitle"
           },
           {
-            "content": "my awesome guided tour",
+            "content": "my awesome guided tour step 6",
             "panelTitle": "six",
             "selectBy": "panelTitle"
           },
           {
-            "content": "my awesome guided tour",
+            "content": "my awesome guided tour step 7",
             "panelTitle": "seven",
             "selectBy": "panelTitle"
           },
           {
-            "content": "my awesome guided tour",
+            "content": "my awesome guided tour step 8",
             "panelTitle": "eight",
             "selectBy": "panelTitle"
           }
@@ -710,7 +710,7 @@
   "timepicker": {},
   "timezone": "",
   "title": "Guided tour panel demo",
-  "uid": "momJBsA4k",
+  "uid": "guided-tour-demo",
   "version": 4,
   "weekStart": ""
 }

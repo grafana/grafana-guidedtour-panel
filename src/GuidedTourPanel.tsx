@@ -16,6 +16,7 @@ export const GuidedTourPanel = (props: PanelProps<GuidedTourOptions>) => {
   const steps: Step[] = (options.steps || []).map((step) => {
     return {
       target: getStepSelector(step),
+      disableBeacon: options.disableBeacon,
       content: <StepContainer content={step.content} contentAlign={options.contentAlign} backgroundImage={options.backgroundImage} />,
     };
   });

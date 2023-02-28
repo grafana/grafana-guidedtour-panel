@@ -14,6 +14,7 @@ export type CONTENT_ALIGNMENT = 'left' | 'center' | 'right';
 export type GuidedTourOptions = {
   // Behavior props
   autoStart?: boolean;
+  disableBeacon?: boolean;
   steps?: Step[];
   // Tour Controller props
   startButtonText?: string;
@@ -63,6 +64,6 @@ export const ContentAlignOptions: Array<SelectableValue<CONTENT_ALIGNMENT>> = [
 export const DEFAULT_STEP: Step = {
   selectBy: 'panelTitle',
   panelTitle: 'Panel Title',
-  content: 'my awesome guided tour',
+  content: 'My awesome guided tour!',
 };
 //#endregion

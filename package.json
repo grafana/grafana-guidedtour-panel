@@ -32,7 +32,7 @@
     "semver": "^7.3.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
+    "@babel/core": "^7.28.5",
     "@grafana/e2e": "8.4.7",
     "@grafana/e2e-selectors": "8.4.7",
     "@grafana/eslint-config": "^5.1.0",

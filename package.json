@@ -1,13 +1,11 @@
 {
   "name": "grafana-guidedtour-panel",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Guided tour for Grafana dashboards",
   "scripts": {
     "build": "webpack -c ./.config/webpack/webpack.config.ts --env production",
     "dev": "webpack -w -c ./.config/webpack/webpack.config.ts --env development",
     "watch": "yarn dev",
-    "e2e": "yarn exec cypress run",
-    "e2e:open": "yarn exec cypress open",
     "lint": "eslint --cache --ignore-path ./.gitignore --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "yarn lint --fix",
     "server": "docker-compose up --build",
@@ -53,7 +51,6 @@
     "cspell": "^6.22.0",
     "css-loader": "^6.7.1",
     "csstype": "^3.0.9",
-    "cypress": "^12.7.0",
     "eslint": "8.26.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jsdoc": "^39.6.2",
@@ -79,5 +76,6 @@
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2",
     "webpack-livereload-plugin": "^3.0.2"
-  }
+  },
+  "packageManager": "yarn@4.12.0"
 }

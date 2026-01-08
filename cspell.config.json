@@ -2,9 +2,11 @@
   "ignorePaths": [
     "node_modules/",
     "provisioning",
-    "dist/"
+    "dist/",
+    "package.json"
   ],
   "words": [
+    "Combobox",
     "csstype",
     "endregion",
     "grafana",

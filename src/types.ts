@@ -1,4 +1,5 @@
 import { SelectableValue } from '@grafana/data';
+import { ComboboxOption } from '@grafana/ui';
 
 //#region Step Props
 type StepSelectType = 'panelTitle' | 'customTarget';
@@ -43,7 +44,7 @@ export type GuidedTourOptions = {
 //#endregion
 
 //#region Selectable Options
-export const StepSelectTypeOptions: Array<SelectableValue<StepSelectType>> = [
+export const StepSelectTypeOptions: Array<ComboboxOption<StepSelectType>> = [
   { value: 'panelTitle', label: 'Panel' },
   { value: 'customTarget', label: 'Custom CSS Target' },
 ];

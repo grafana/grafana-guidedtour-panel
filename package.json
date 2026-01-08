@@ -57,7 +57,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "cspell": "^6.22.0",
     "css-loader": "^6.7.3",
-    "csstype": "^3.0.9",
+    "csstype": "^3.2.3",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-jsdoc": "^51.2.3",

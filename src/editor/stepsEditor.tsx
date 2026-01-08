@@ -44,6 +44,7 @@ export const StepEditor = (props: StandardEditorProps<Step[]>) => {
           {step.selectBy === 'panelTitle' && (
             <div className="gf-form">
               <InlineFormLabel>Target Panel Title</InlineFormLabel>
+              {/* @ts-ignore:  */}
               <Input
                 value={step.panelTitle}
                 onChange={(e) => onValueChange(`${index}.panelTitle`, e.currentTarget.value)}
@@ -53,11 +54,13 @@ export const StepEditor = (props: StandardEditorProps<Step[]>) => {
           {step.selectBy === 'customTarget' && (
             <div className="gf-form">
               <InlineFormLabel>CSS Selector</InlineFormLabel>
+              {/* @ts-ignore:  */}
               <Input value={step.target} onChange={(e) => onValueChange(`${index}.target`, e.currentTarget.value)} />
             </div>
           )}
           <div className="gf-form">
             <InlineFormLabel>Guided Tour Content</InlineFormLabel>
+            {/* @ts-ignore:  */}
             <TextArea
               value={step.content}
               rows={3}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { set } from 'lodash';
 import { StandardEditorProps } from '@grafana/data';
-import { Button, Input, TextArea, Select, InlineFormLabel } from '@grafana/ui';
+import { Button, Input, TextArea, Combobox, InlineFormLabel } from '@grafana/ui';
 import { Step, DEFAULT_STEP, StepSelectTypeOptions } from './../types';
 
 export const StepEditor = (props: StandardEditorProps<Step[]>) => {
@@ -35,7 +35,7 @@ export const StepEditor = (props: StandardEditorProps<Step[]>) => {
           <h5>Step {index + 1}</h5>
           <div className="gf-form">
             <InlineFormLabel>Target</InlineFormLabel>
-            <Select
+            <Combobox
               options={StepSelectTypeOptions}
               value={step.selectBy}
               onChange={(e) => onValueChange(`${index}.selectBy`, e.value + '')}

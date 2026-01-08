@@ -1,4 +1,17 @@
 {
-  "ignorePaths": ["node_modules/", "provisioning", "dist/", "package.json"],
-  "words": ["csstype", "endregion", "grafana", "guidedtour", "typecheck", "yesoreyeram"]
+  "ignorePaths": [
+    "node_modules/",
+    "provisioning",
+    "dist/",
+    "package.json"
+  ],
+  "words": [
+    "Combobox",
+    "csstype",
+    "endregion",
+    "grafana",
+    "guidedtour",
+    "typecheck",
+    "yesoreyeram"
+  ]
 }

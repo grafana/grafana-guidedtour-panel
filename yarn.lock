@@ -6871,7 +6871,7 @@ __metadata:
     swc-loader: "npm:^0.2.3"
     terser-webpack-plugin: "npm:^5.3.10"
     ts-node: "npm:^10.9.2"
-    tsconfig-paths: "npm:^4.1.0"
+    tsconfig-paths: "npm:^4.2.0"
     tslib: "npm:^2.3.1"
     typescript: "npm:5.5.4"
     webpack: "npm:^5.94.0"
@@ -11951,14 +11951,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig-paths@npm:^4.1.0":
-  version: 4.1.2
-  resolution: "tsconfig-paths@npm:4.1.2"
+"tsconfig-paths@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "tsconfig-paths@npm:4.2.0"
   dependencies:
     json5: "npm:^2.2.2"
     minimist: "npm:^1.2.6"
     strip-bom: "npm:^3.0.0"
-  checksum: 10c0/8993f3e160aaca196a5e1e65c26167a6d026cb48c8b80bfe41c1a37a280a471a23611a9ee85ae913714968a75f75314d580726b6b8f08486fe08a0f0161f1930
+  checksum: 10c0/09a5877402d082bb1134930c10249edeebc0211f36150c35e1c542e5b91f1047b1ccf7da1e59babca1ef1f014c525510f4f870de7c9bda470c73bb4e2721b3ea
   languageName: node
   linkType: hard
 

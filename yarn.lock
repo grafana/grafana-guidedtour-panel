@@ -3166,13 +3166,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glob@npm:^8.0.0":
-  version: 8.0.1
-  resolution: "@types/glob@npm:8.0.1"
+"@types/glob@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "@types/glob@npm:8.1.0"
   dependencies:
     "@types/minimatch": "npm:^5.1.2"
     "@types/node": "npm:*"
-  checksum: 10c0/6540d3bc86ec81da4247dc8f5b639b80267b4eae6320b250cca1d71b7c57cff88bb790c7299a58bcbad33f4bbf437c35ceea58041cbb630311fc2ee86286a6c6
+  checksum: 10c0/ded07aa0d7a1caf3c47b85e262be82989ccd7933b4a14712b79c82fd45a239249811d9fc3a135b3e9457afa163e74a297033d7245b0dc63cd3d032f3906b053f
   languageName: node
   linkType: hard
 
@@ -7006,7 +7006,7 @@ __metadata:
     "@swc/jest": "npm:^0.2.26"
     "@testing-library/jest-dom": "npm:6.1.4"
     "@testing-library/react": "npm:14.0.0"
-    "@types/glob": "npm:^8.0.0"
+    "@types/glob": "npm:^8.1.0"
     "@types/jest": "npm:^29.5.0"
     "@types/lodash": "npm:^4.17.23"
     "@types/markdown-it": "npm:^12.0.2"

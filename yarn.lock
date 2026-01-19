@@ -5082,7 +5082,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csstype@npm:^3.0.2, csstype@npm:^3.0.9, csstype@npm:^3.1.2, csstype@npm:^3.2.2":
+"csstype@npm:^3.0.2, csstype@npm:^3.1.2, csstype@npm:^3.2.2, csstype@npm:^3.2.3":
   version: 3.2.3
   resolution: "csstype@npm:3.2.3"
   checksum: 10c0/cd29c51e70fa822f1cecd8641a1445bed7063697469d35633b516e60fe8c1bde04b08f6c5b6022136bb669b64c63d4173af54864510fbb4ee23281801841a3ce
@@ -7012,7 +7012,7 @@ __metadata:
     copy-webpack-plugin: "npm:^11.0.0"
     cspell: "npm:^6.22.0"
     css-loader: "npm:^6.7.3"
-    csstype: "npm:^3.0.9"
+    csstype: "npm:^3.2.3"
     emotion: "npm:10.0.27"
     eslint: "npm:^9.0.0"
     eslint-config-prettier: "npm:^8.8.0"

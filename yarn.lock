@@ -1250,6 +1250,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gilbarbara/deep-equal@npm:^0.1.1":
+  version: 0.1.2
+  resolution: "@gilbarbara/deep-equal@npm:0.1.2"
+  checksum: 10c0/ef441034a34d3e3a2fdcdd473b1082c4e8a324682c8a35cea100d60b5341fecb7249ae043eecf2ea9bdf736a1fe582b294a347095c3d48a1d9d04d7d6e4ad16a
+  languageName: node
+  linkType: hard
+
+"@gilbarbara/deep-equal@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "@gilbarbara/deep-equal@npm:0.3.1"
+  checksum: 10c0/009584aa912f13c59e98b35c3ebf99ff7fc7c5658d5394fd56d58570da61d68cbc6f7ec082ad2ef009ff72873cc1bd8b9b9fda9e39f7e6594fd643a915e0bc94
+  languageName: node
+  linkType: hard
+
 "@grafana/data@npm:12.3.1":
   version: 12.3.1
   resolution: "@grafana/data@npm:12.3.1"
@@ -5523,10 +5537,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deepmerge@npm:^4.2.2":
-  version: 4.2.2
-  resolution: "deepmerge@npm:4.2.2"
-  checksum: 10c0/d6136eee869057fea7a829aa2d10073ed49db5216e42a77cc737dd385334aab9b68dae22020a00c24c073d5f79cbbdd3f11b8d4fc87700d112ddaa0e1f968ef2
+"deepmerge@npm:^4.2.2, deepmerge@npm:^4.3.1":
+  version: 4.3.1
+  resolution: "deepmerge@npm:4.3.1"
+  checksum: 10c0/e53481aaf1aa2c4082b5342be6b6d8ad9dfe387bc92ce197a66dea08bd4265904a087e75e464f14d1347cf2ac8afe1e4c16b266e0561cc5df29382d3c5f80044
   languageName: node
   linkType: hard
 
@@ -6338,13 +6352,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"exenv@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "exenv@npm:1.2.2"
-  checksum: 10c0/4e96b355a6b9b9547237288ca779dd673b2e698458b409e88b50df09feb7c85ef94c07354b6b87bc3ed0193a94009a6f7a3c71956da12f45911c0d0f5aa3caa0
-  languageName: node
-  linkType: hard
-
 "exit@npm:^0.1.2":
   version: 0.1.2
   resolution: "exit@npm:0.1.2"
@@ -7024,7 +7031,7 @@ __metadata:
     prettier: "npm:^2.8.7"
     react: "npm:^18.3.0"
     react-dom: "npm:^18.3.0"
-    react-joyride: "npm:^2.3.0"
+    react-joyride: "npm:2.9.3"
     replace-in-file-webpack-plugin: "npm:^1.0.6"
     sass: "npm:1.97.2"
     sass-loader: "npm:13.3.3"
@@ -7680,10 +7687,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-lite@npm:^0.8.1":
-  version: 0.8.1
-  resolution: "is-lite@npm:0.8.1"
-  checksum: 10c0/8edb9b26276a9b7594fd97bdafec7d7a08c1c25c88344512a471ab1884c925da4c3a6ec59f225785a3b41d139c02400dc530027fe1443f818f5eeb2ea372fe51
+"is-lite@npm:^0.8.2":
+  version: 0.8.2
+  resolution: "is-lite@npm:0.8.2"
+  checksum: 10c0/ed4b99d47ff12d0bf9730994cec8bcdee20bf46d68810f55e9e041797c76da664ab6d48a9ed2e7fb3aa52843a48ac4a083561a2235311a046551542504d995fd
+  languageName: node
+  linkType: hard
+
+"is-lite@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "is-lite@npm:1.2.1"
+  checksum: 10c0/53acb0f6329f0aba96fef4d883d42f3d9aabf2c42baba45821407d14b1782b9c6bea42c3eef72b37788be1acc95d6cf2df8a6b8424cb9f6eb12c08d5a7d81288
   languageName: node
   linkType: hard
 
@@ -9174,20 +9188,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nested-property@npm:1.0.1":
-  version: 1.0.1
-  resolution: "nested-property@npm:1.0.1"
-  checksum: 10c0/063e7e7adb8cca1ff9f7bcbafb2e4866abdc36bc4dfaf5851fd0969000c7081ea960dc1a9c20ff4947319b40adc4c781479dc51303cb3b817f9def0ee9ceaccc
-  languageName: node
-  linkType: hard
-
-"nested-property@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "nested-property@npm:4.0.0"
-  checksum: 10c0/7bc0514f3d10460cc07ea27a39ce75f81471a28b8b019d4bfd9eda41dcd92c1fcb291598d7e168ae8bf1324109b36325e3a563d6aa2537d13015bea9258b8b72
-  languageName: node
-  linkType: hard
-
 "node-abort-controller@npm:^3.0.1":
   version: 3.1.1
   resolution: "node-abort-controller@npm:3.1.1"
@@ -10322,21 +10322,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-floater@npm:^0.7.3":
-  version: 0.7.3
-  resolution: "react-floater@npm:0.7.3"
+"react-floater@npm:^0.7.9":
+  version: 0.7.9
+  resolution: "react-floater@npm:0.7.9"
   dependencies:
-    deepmerge: "npm:^4.2.2"
-    exenv: "npm:^1.2.2"
-    is-lite: "npm:^0.8.1"
+    deepmerge: "npm:^4.3.1"
+    is-lite: "npm:^0.8.2"
     popper.js: "npm:^1.16.0"
-    react-proptype-conditional-require: "npm:^1.0.4"
-    tree-changes: "npm:^0.5.1"
+    prop-types: "npm:^15.8.1"
+    tree-changes: "npm:^0.9.1"
   peerDependencies:
-    prop-types: ^15.7.2
-    react: ^15.0.0 || ^16.0.0 || ^17.0.0
-    react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 10c0/9d4e54a18566a3f36ca639fa88b18cf57f67acd5b4383d1e86acb36b50492f94fff3c948979a14b0a1a868453784534bc837a66cf540c44fa4fdab58904c9f3c
+    react: 15 - 18
+    react-dom: 15 - 18
+  checksum: 10c0/3fa58e968a405fb95a004897ed19c87b4991e52ebd45d837b8577eb9175ddc1dfab223bb653a0fa73ffc22fc2b2a30f2d07e924f41f41a040299793e4d2decd4
   languageName: node
   linkType: hard
 
@@ -10413,6 +10411,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-innertext@npm:^1.1.5":
+  version: 1.1.5
+  resolution: "react-innertext@npm:1.1.5"
+  peerDependencies:
+    "@types/react": ">=0.0.0 <=99"
+    react: ">=0.0.0 <=99"
+  checksum: 10c0/45335918ac83334133a9fa0df4ce109e0d4a45d54b783a8eaec88811b36dd5c3bbb5d9a6af2da1eed518a6f325a6ffae4be7bd30878596e0ec1760b231a8e0ee
+  languageName: node
+  linkType: hard
+
 "react-is@npm:18.2.0":
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
@@ -10441,25 +10449,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-joyride@npm:^2.3.0":
-  version: 2.3.1
-  resolution: "react-joyride@npm:2.3.1"
+"react-joyride@npm:2.9.3":
+  version: 2.9.3
+  resolution: "react-joyride@npm:2.9.3"
   dependencies:
+    "@gilbarbara/deep-equal": "npm:^0.3.1"
     deep-diff: "npm:^1.0.2"
-    deepmerge: "npm:^4.2.2"
-    exenv: "npm:^1.2.2"
-    is-lite: "npm:^0.8.1"
-    nested-property: "npm:^4.0.0"
-    react-floater: "npm:^0.7.3"
+    deepmerge: "npm:^4.3.1"
+    is-lite: "npm:^1.2.1"
+    react-floater: "npm:^0.7.9"
+    react-innertext: "npm:^1.1.5"
     react-is: "npm:^16.13.1"
     scroll: "npm:^3.0.1"
-    scrollparent: "npm:^2.0.1"
-    tree-changes: "npm:^0.7.1"
+    scrollparent: "npm:^2.1.0"
+    tree-changes: "npm:^0.11.2"
+    type-fest: "npm:^4.27.0"
   peerDependencies:
-    prop-types: ^15.0.0
-    react: ^15.0.0 || ^16.0.0 || ^17.0.0
-    react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 10c0/e9aea80605fbda931ed1655bd05e842daade42c5e43b83b66134d4d7c750b4ce4f92121372f5460c738d88202b1ee9e46b5962641a3237b35a3d3a51b906bf25
+    react: 15 - 18
+    react-dom: 15 - 18
+  checksum: 10c0/8045ef1cc14e1d48aebf46f9ecff43c1aecb6eacf3310f533844c5bf7b4d6390cdbed5f43424bb4d19c6a3351ca8d150d0a0e0c5c5e99138b70d52830276d554
   languageName: node
   linkType: hard
 
@@ -10469,13 +10477,6 @@ __metadata:
   peerDependencies:
     react: ">=16.8.0"
   checksum: 10c0/a081f561c9700fead6ba98b91e3fe77a36a680e3fd69dbf4eecbaa5fabcb7173049c6d6fb7487355331a770bed432356edaa147702f3d46ddf0d6caa623e779f
-  languageName: node
-  linkType: hard
-
-"react-proptype-conditional-require@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "react-proptype-conditional-require@npm:1.0.4"
-  checksum: 10c0/fef7e446037115083f708c7521c3da2229fb9a207c04483474eeb33d4bcc690e413e7d86225ac64b0964620ec9346268638300fce6ab35022c78ca1e1fee44aa
   languageName: node
   linkType: hard
 
@@ -11106,10 +11107,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scrollparent@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "scrollparent@npm:2.0.1"
-  checksum: 10c0/1d2e235ba5315725d5bf88946664c72772e32be32bd4555798148f9745e0bc83cd07a2db2faea1c143dee02f84002275338905357cdd43577ec440d5e446de0b
+"scrollparent@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "scrollparent@npm:2.1.0"
+  checksum: 10c0/b377ec5a461f6ed8021f0c3c6b0c76317341c33838f047e91387cdfe0ba4c28aa2a3855240458f9bcf1e18e6c8718540075eb1215fc094496300114f295b2e6b
   languageName: node
   linkType: hard
 
@@ -12044,23 +12045,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tree-changes@npm:^0.5.1":
-  version: 0.5.1
-  resolution: "tree-changes@npm:0.5.1"
+"tree-changes@npm:^0.11.2":
+  version: 0.11.3
+  resolution: "tree-changes@npm:0.11.3"
   dependencies:
-    deep-diff: "npm:^1.0.2"
-    nested-property: "npm:1.0.1"
-  checksum: 10c0/7faa8775c4714e6146cc5603416bb8792b94e736ef9ac1ab8d1538e1cbc79e6bca8f90796afdd7fbef6516c4a25bd17622bc042402a2391bdaa922c6aa9db826
+    "@gilbarbara/deep-equal": "npm:^0.3.1"
+    is-lite: "npm:^1.2.1"
+  checksum: 10c0/4479a54fb1589a0963a29e17959a6d13c5f60f962032bf23e84111b34d367d0abb56c6c17c5511a95aade7274b25eacccb651d1d88c6606151e6fdcd2e185feb
   languageName: node
   linkType: hard
 
-"tree-changes@npm:^0.7.1":
-  version: 0.7.1
-  resolution: "tree-changes@npm:0.7.1"
+"tree-changes@npm:^0.9.1":
+  version: 0.9.3
+  resolution: "tree-changes@npm:0.9.3"
   dependencies:
-    fast-deep-equal: "npm:^3.1.3"
-    is-lite: "npm:^0.8.1"
-  checksum: 10c0/81fa386da6a8ae3a40b272d4d878fe85dc91405b3f4c86f5a7d7456390ccc53bc4bef9ae5a9473e20c59c126216d9004e46518dcc107e94a20e6a4ddc134e418
+    "@gilbarbara/deep-equal": "npm:^0.1.1"
+    is-lite: "npm:^0.8.2"
+  checksum: 10c0/e7a38ed3c22ed1195a78e800a8f08a01d44cd8f4abac421b2be6ae34f991dfbd60ce4235be4e002882f3debef95b8e0f7e027b3b758325e9b4bda905c34d3d8f
   languageName: node
   linkType: hard
 
@@ -12165,6 +12166,13 @@ __metadata:
   version: 0.21.3
   resolution: "type-fest@npm:0.21.3"
   checksum: 10c0/902bd57bfa30d51d4779b641c2bc403cdf1371fb9c91d3c058b0133694fcfdb817aef07a47f40faf79039eecbaa39ee9d3c532deff244f3a19ce68cea71a61e8
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^4.27.0":
+  version: 4.41.0
+  resolution: "type-fest@npm:4.41.0"
+  checksum: 10c0/f5ca697797ed5e88d33ac8f1fec21921839871f808dc59345c9cf67345bfb958ce41bd821165dbf3ae591cedec2bf6fe8882098dfdd8dc54320b859711a2c1e4
   languageName: node
   linkType: hard
 
